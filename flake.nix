@@ -13,6 +13,8 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+          /etc/nixos/hardware-configuration.nix
+          nixpkgs.nixosModules.nixpkgs
           nix-flatpak.nixosModules.nix-flatpak
         ];
       };

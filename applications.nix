@@ -20,5 +20,6 @@
     nixfmt
     ghostty
     vlc 
+    
   ];
 }

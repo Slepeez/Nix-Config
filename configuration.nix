@@ -97,8 +97,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  
-  
+  environment.sessionVariables = {
+    GTK_IM_MODULE = "copland";
+    QT_IM_MODULE  = "simple";
+    XMODIFIERS    = "@im=none";
+  };
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

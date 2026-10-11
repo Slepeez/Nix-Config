@@ -9,22 +9,11 @@
   outputs = { self, nixpkgs, nix-flatpak }: {
     nixosConfigurations = {
       
-      # MÁQUINA ATUAL (Antiga)
-      ArthurNix = nixpkgs.lib.nixosSystem {
+      Nix = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { meuHostName = "ArthurNix"; }; # Passa o nome original
         modules = [
-          ./configuration.nix # Arquivo de hardware atual renomeado
-          nix-flatpak.nixosModules.nix-flatpak
-        ];
-      };
-
-      # MÁQUINA NOVA
-      NixOS = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux"; # Altere se a nova máquina usar outra arquitetura
-        specialArgs = { meuHostName = "NixOS"; }; # Passa o nome novo
-        modules = [
-          ./configuration.nix # Reutiliza a mesma configuração 
+          ./hardware-configuration.nix
+          ./configuration.nix
           nix-flatpak.nixosModules.nix-flatpak
         ];
       };

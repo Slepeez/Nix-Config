@@ -11,6 +11,7 @@
       ./applications.nix
       ./flatpak.nix
       ./udev.nix
+      ./gc.nix
     ];
 
   # Bootloader.

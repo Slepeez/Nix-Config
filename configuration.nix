@@ -14,12 +14,8 @@
     ];
 
   # Bootloader.
-  boot = {
-    loader.grub.enable = true;
-    loader.grub.device = "/dev/nvme0n1";
-    loader.grub.useOSProber = true;
-	
-  };
+ boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "Nix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -60,8 +56,8 @@
   services.xserver.xkb = {
      layout = "us";
      variant = "intl";
-  }
- console.keyMap = "us-acentos";
+  };
+  console.keyMap = "us";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

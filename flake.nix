@@ -12,7 +12,6 @@
       Nix = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hardware-configuration.nix
           ./configuration.nix
           nix-flatpak.nixosModules.nix-flatpak
         ];

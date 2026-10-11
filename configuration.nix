@@ -56,13 +56,12 @@
 
   
   services.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
+  services.desktopManager.gnome.enable = true;
   services.xserver.xkb = {
-    layout = "us";
-    variant = "altgr-intl";
-  };
+     layout = "us";
+     variant = "intl";
+  }
+ console.keyMap = "us-acentos";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -130,6 +129,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "26.05"; # Did you read the comment?
 
 }

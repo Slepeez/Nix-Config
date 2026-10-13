@@ -104,7 +104,7 @@
     enable = true;
     extraPackages = with pkgs; [
       mesa      
-      vaapiVdpau         
+      libva-vdpau-driver         
       libvdpau-va-gl     
     ];
   };

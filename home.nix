@@ -50,7 +50,26 @@
       bindkey '^[[B' down-line-or-search
     '';
   };
+  programs.gnome-shell = {
+    enable = true;
+    
+    # Baixa as duas extensões desejadas
+    extensions = with pkgs.gnomeExtensions; [
+      { package = blur-my-shell; }
+      { package = dash-to-dock; }
+    ];
+  };
 
+  # Ativa automaticamente as extensões no GNOME
+  dconf.settings = {
+    "org/gnome/shell" = {
+      disable-user-extensions = false;
+      enabled-extensions = [
+        "blur-my-shell@aunetx"
+        "dash-to-dock@://gmail.com"
+      ];
+    };
+  };
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
 }

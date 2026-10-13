@@ -22,7 +22,6 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-
     # History configuration
     history = {
       size = 10000;
@@ -42,9 +41,10 @@
       nix-switch = "sudo nixos-rebuild switch --flake .#Nix";
       nix-clean = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations +5 && nix-store --gc";
     };
+    
 
     # Additional configurations appended to .zshrc
-    initExtra = ''
+    initContent = ''
       # Bind up and down arrow keys for substring history search (using fzf if available)
       bindkey '^[[A' up-line-or-search
       bindkey '^[[B' down-line-or-search

@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nix-flatpak }: {
+  outputs = { self, nixpkgs, nix-flatpak, home-manager }: {
     nixosConfigurations = {
       
       Nix = nixpkgs.lib.nixosSystem {
@@ -18,16 +18,17 @@
         modules = [
           ./configuration.nix
           nix-flatpak.nixosModules.nix-flatpak
+          home-manager.nixosModules.home-manager
+        
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            
+            home-manager.users.arthur = import ./home.nix; 
+          }
         ];
-        home-manager.nixosModules.home-manage = {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          
-          home-manager.users.arthur = import ./home.nix; 
-        }
       };
 
     };
   };
 }
-

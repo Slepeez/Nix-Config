@@ -12,6 +12,7 @@
       ./flatpak.nix
       ./udev.nix
       ./gc.nix
+      ./gnome-extensions.nix
     ];
 
   # Bootloader.

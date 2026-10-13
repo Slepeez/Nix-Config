@@ -22,5 +22,8 @@
     vlc 
     gnome-tweaks
     gnome-extension-manager
+    ffmpeg
+    libva
+    libva-utils
   ];
 }

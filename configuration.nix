@@ -100,7 +100,14 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      mesa.drivers       
+      vaapiVdpau         
+      libvdpau-va-gl     
+    ];
+  };
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

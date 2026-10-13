@@ -20,6 +20,6 @@
     nixfmt
     ghostty
     vlc 
-    
+    gnome-tweaks
   ];
 }

@@ -21,5 +21,6 @@
     ghostty
     vlc 
     gnome-tweaks
+    gnome-extension-manager
   ];
 }

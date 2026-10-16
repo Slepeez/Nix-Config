@@ -2,7 +2,7 @@
 {
     services.flatpak ={
         enable  = true;
-        packages = ["org.prismlauncher.PrismLauncher"];
+        packages = ["org.prismlauncher.PrismLauncher" "org.fedoraproject.MediaWriter"];
         update.auto = {
           enable = true;
       };
